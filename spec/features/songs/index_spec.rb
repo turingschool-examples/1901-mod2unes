@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'song index page', type: :feature do
   it 'shows all songs' do
-    song_1 = Song.create(title: 'Song 1', length: 200, play_count: 2)
-    song_2 = Song.create(title: 'Song 2', length: 300, play_count: 5)
+    artist = Artist.create(name: 'Artist 1')
+    song_1 = artist.songs.create(title: 'Song 1', length: 200, play_count: 2)
+    song_2 = artist.songs.create(title: 'Song 2', length: 300, play_count: 5)
 
     visit '/songs'
 

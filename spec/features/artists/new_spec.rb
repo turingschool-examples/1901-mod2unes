@@ -4,14 +4,14 @@ RSpec.describe 'new artist workflow' do
   context 'as a visitor' do
     it 'should create a new artist successfully' do
       artist_name = 'Journey'
-      visit '/artists/new'
-save_and_open_page
+      visit new_artist_path
+
       fill_in 'artist[name]', with: artist_name
 
       click_button 'Create Artist'
 
       artist = Artist.last
-      expect(current_path).to eq("/artists/#{artist.id}")
+      expect(current_path).to eq(artist_path(artist))
     end
   end
 end

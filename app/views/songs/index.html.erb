@@ -2,7 +2,7 @@
 
 <% @songs.each do |song| %>
   <ul>
-  <li><%= song.title %></li>
+    <%= link_to song.title, song_path(song) %>
   <li>Play Count: <%= song.play_count %></li>
   </ul>
 <% end %>

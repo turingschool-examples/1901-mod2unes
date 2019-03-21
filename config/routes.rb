@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   # get '/songs', to: 'songs#index'
 
   resources :songs, only: [:index, :show]
-  resources :artists, only: [:new, :create, :show]
+  # resources :artists, only: [:new, :create, :show]
+
+  resources :artists, only: [:new, :create, :show] do
+    resources :songs, only: [:new, :create]
+  end
 
 end

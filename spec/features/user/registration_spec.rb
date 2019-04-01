@@ -20,13 +20,13 @@ RSpec.describe 'registration workflow' do
   end
 
   describe 'sad path' do
-    xit 'should fail with invalid/no information' do
+    it 'should fail with invalid/no information' do
       visit new_user_path
       # leave form empty
       click_button 'Create User'
 
       expect(current_path).to eq(users_path)
-      expect(page).to have_content("Username can't be blank")
+      expect(page).to have_content("Email can't be blank")
       expect(page).to have_content("Password can't be blank")
     end
   end

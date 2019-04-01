@@ -33,6 +33,7 @@ RSpec.describe 'login / logout workflow' do
 
     it 'block login if given no credentials' do
       visit login_path
+      # leave form empty
     end
 
     after :each do
